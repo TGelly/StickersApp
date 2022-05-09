@@ -15,9 +15,32 @@ public class StartServer {
 
         _Initializer.Init();
 
-        //Defining our routes
+        //*Defining our routes
+
+        //For GET requests :
+        get("/", (req, res) -> {
+            return "<html><body>Page d'accueil</body></html>";
+        });
+
         get("/users", (req, res) -> {
             return UserGUI.getAllUsers();
+        });
+
+        get("/books", (req, res) -> {
+            return UserGUI.getAllBooks();
+        });
+
+        get("/books/{bookId}", (req, res) -> {
+            return UserGUI.getBook(bookId);
+        });
+
+        get("/books/{bookId}/{stickerId}", (req, res) -> {
+            return UserGUI.getSticker(bookId, stickerId);
+        });
+
+        //For POST requests :
+        post("/books/", (req, res) -> {
+            return UserGui.postNewSticker();
         });
     }
 }
