@@ -29,12 +29,16 @@ public class UserDAO extends _Generic<UserEntity> {
 
     @Override
     public UserEntity create(UserEntity obj) {
+        int id = obj.getId();
+        //todo faire la requête SQL qui créé un user
         //TODO !
         return null;
     }
 
     @Override
     public void delete(UserEntity obj) {
+        int id = obj.getId();
+        //todo faire la requête SQL qui supprime un user
         //TODO !
     }
 }
