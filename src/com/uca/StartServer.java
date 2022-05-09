@@ -19,7 +19,7 @@ public class StartServer {
 
         //For GET requests :
         get("/", (req, res) -> {
-            return "<html><body>Page d'accueil</body></html>";
+            return "index.html";
         });
 
         get("/users", (req, res) -> {
