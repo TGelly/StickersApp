@@ -18,7 +18,7 @@ public class BookGUI {
 
         Map<String, Object> input = new HashMap<>();
 
-        input.put("Books", BookCore.getAllBooks());
+        input.put("books", BookCore.getAllBooks());
 
         Writer output = new StringWriter();
         Template template = configuration.getTemplate("Books/Books.ftl");

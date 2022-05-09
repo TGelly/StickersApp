@@ -3,35 +3,26 @@ package com.uca.entity;
 import java.sql.Timestamp;
 
 public class BookEntity {
-    private String firstName;
-    private String lastName;
-    private int id;
+    private String childName;
+    private int bookId;
 
     public BookEntity() {
         //Ignored !
     }
 
-    public int getId() {
-        return id;
+    public int getBookId() {
+        return bookId;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setBookId(int bookId) {
+        this.bookId = bookId;
     }
 
-    public String getFirstName() {
-        return firstName;
+    public String getChildName() {
+        return childName;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    public void setChildFirst(String childName) {
+        this.childName = childName;
     }
 }
