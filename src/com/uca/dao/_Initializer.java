@@ -14,6 +14,8 @@ public class _Initializer {
             statement = connection.prepareStatement("CREATE TABLE IF NOT EXISTS users (id int primary key auto_increment, firstname varchar(100), lastname varchar(100)); ");
             statement.executeUpdate();
 
+            statement = connection.prepareStatement("CREATE TABLE IF NOT EXISTS books (id int primary key auto_increment, firstname")
+
             //Todo Remove me !
             statement = connection.prepareStatement("INSERT INTO users(firstname, lastname) VALUES(?, ?);");
             statement.setString(1, "Theodore");
