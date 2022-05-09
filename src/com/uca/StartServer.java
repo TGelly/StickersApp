@@ -26,6 +26,7 @@ public class StartServer {
             return UserGUI.getAllUsers();
         });
 
+        /*
         get("/books", (req, res) -> {
             return UserGUI.getAllBooks();
         });
@@ -42,5 +43,6 @@ public class StartServer {
         post("/books/", (req, res) -> {
             return UserGui.postNewSticker();
         });
+        */
     }
 }
