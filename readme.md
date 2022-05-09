@@ -17,8 +17,8 @@ For each good or bad sticker, the teacher who attributes it writes a description
 | Address                       | Resource                              |
 |:-----------------------------:|:-------------------------------------:|
 | /books                        | all books                             |
-| /books/[bookID]               | the stickers in a specific book       |  
-| /books/[bookID]/[stickerID]   | a specific sticker in a specific book |   
+| /books/[bookID]               | the stickers in a specific book       |
+| /books/[bookID]/[stickerID]   | a specific sticker in a specific book |
 
 ## Request path :
 
@@ -31,6 +31,8 @@ transmitted data are *entity/UserEntity* objects
   - can only see one book and it's stickers
 - logged as a teacher :
   - can see all books
+  - can set new stickers
+  - can set new books
 
 ## Deployment
 

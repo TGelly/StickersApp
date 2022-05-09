@@ -12,7 +12,6 @@ public class StartServer {
         staticFiles.location("/static/");
         port(8081);
 
-
         _Initializer.Init();
 
         //*Defining our routes
