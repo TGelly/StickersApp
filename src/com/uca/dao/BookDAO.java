@@ -10,13 +10,12 @@ public class BookDAO extends _Generic<BookEntity> {
     public ArrayList<BookEntity> getAllBooks() {
         ArrayList<BookEntity> entities = new ArrayList<>();
         try {
-            PreparedStatement preparedStatement = this.connect.prepareStatement("SELECT * FROM books ORDER BY id ASC;");
+            PreparedStatement preparedStatement = this.connect.prepareStatement("SELECT * FROM books ORDER BY BookID ASC;");
             ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
                 BookEntity entity = new BookEntity();
-                entity.setId(resultSet.getInt("id"));
-                entity.setFirstName(resultSet.getString("firstname"));
-                entity.setLastName(resultSet.getString("lastname"));
+                entity.setBookId(resultSet.getInt("bookID"));
+                entity.setChildName(resultSet.getString("childName"));
 
                 entities.add(entity);
             }
@@ -29,16 +28,30 @@ public class BookDAO extends _Generic<BookEntity> {
 
     @Override
     public BookEntity create(BookEntity obj) {
-        int id = obj.getId();
-        //todo faire la requête SQL qui créé un Book
-        //TODO !
-        return null;
+        String id = Integer.toString(obj.getBookId());
+        String childName = obj.getChildName();
+        try{
+            PreparedStatement preparedStatement = this.connect.prepareStatement("INSERT INTO books VALUES(?,?);");
+            preparedStatement.setString(1,id);
+            preparedStatement.setString(2,childName);
+            ResultSet resultSet = preparedStatement.executeQuery();
+        }
+        catch(SQLException e){
+            e.printStackTrace();
+        }
+        return obj;
     }
 
     @Override
     public void delete(BookEntity obj) {
-        int id = obj.getId();
-        //todo faire la requête SQL qui supprime un Book
-        //TODO !
+        String id = Integer.toString(obj.getBookId());
+        try{
+            PreparedStatement preparedStatement = this.connect.prepareStatement("DELETE FROM books WHERE bookID = ?");
+            preparedStatement.setString(1,id);
+            ResultSet resultSet = preparedStatement.executeQuery();
+        }
+        catch(SQLException e){
+            e.printStackTrace();
+        }
     }
 }

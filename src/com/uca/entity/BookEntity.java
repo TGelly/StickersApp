@@ -22,7 +22,7 @@ public class BookEntity {
         return childName;
     }
 
-    public void setChildFirst(String childName) {
+    public void setChildName(String childName) {
         this.childName = childName;
     }
 }

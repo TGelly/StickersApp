@@ -18,10 +18,11 @@ public class BookGUI {
 
         Map<String, Object> input = new HashMap<>();
 
+        System.out.println(BookCore.getAllBooks().toString());
         input.put("books", BookCore.getAllBooks());
 
         Writer output = new StringWriter();
-        Template template = configuration.getTemplate("Books/Books.ftl");
+        Template template = configuration.getTemplate("books/books.ftl");
         template.setOutputEncoding("UTF-8");
         template.process(input, output);
 
