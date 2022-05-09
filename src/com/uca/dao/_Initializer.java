@@ -15,13 +15,13 @@ public class _Initializer {
             statement.executeUpdate();
 
             /*
-            statement = connection.prepareStatement("CREATE TABLE IF NOT EXISTS class (classID int primary key auto_increment, containerTeacher int, foreign key (containerTeacher) references users(userID)); ");
+            statement = connection.prepareStatement("CREATE TABLE IF NOT EXISTS classes (classID int primary key auto_increment, containerTeacher int, foreign key (containerTeacher) references users(userID)); ");
             statement.executeUpdate();
 
-            statement = connection.prepareStatement("CREATE TABLE IF NOT EXISTS books (bookID int primary key auto_increment, childName varchar(100), containerClass int, containerParent int), foreign key (containerClass) references class(classID), foreign key (containerParent) references user(userID)); ");
+            statement = connection.prepareStatement("CREATE TABLE IF NOT EXISTS books (bookID int primary key auto_increment, childName varchar(100), containerClass int, containerParent int), foreign key (containerClass) references classes(classID), foreign key (containerParent) references user(userID)); ");
             statement.executeUpdate();
 
-            statement = connection.prepareStatement("CREATE TABLE IF NOT EXISTS sticker (stickerID int primary key auto_increment, stickerDate varchar(100), color varchar(8), comment varchar(250), containerBook int, teacher int, foreign key (containerBook) references book(bookID), foreign key (teacher) references user(userID)); ");
+            statement = connection.prepareStatement("CREATE TABLE IF NOT EXISTS stickers (stickerID int primary key auto_increment, stickerDate varchar(100), color varchar(8), comment varchar(250), containerBook int, teacher int, foreign key (containerBook) references book(bookID), foreign key (teacher) references user(userID)); ");
             statement.executeUpdate();
             */
 
