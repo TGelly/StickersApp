@@ -25,11 +25,11 @@ public class StartServer {
             return UserGUI.getAllUsers();
         });
 
-        /*
         get("/books", (req, res) -> {
-            return UserGUI.getAllBooks();
+            return BookGUI.getAllBooks();
         });
 
+        /*
         get("/books/{bookId}", (req, res) -> {
             return UserGUI.getBook(bookId);
         });
