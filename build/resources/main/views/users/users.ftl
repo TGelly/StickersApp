@@ -4,7 +4,7 @@
 
         <ul>
             <#list users as user>
-                <li>${user.id} - ${user.firstName} ${user.lastName}</li>
+                <li>${user.id!} - ${user.firstName!} ${user.lastName!}</li>
             </#list>
         </ul>
 

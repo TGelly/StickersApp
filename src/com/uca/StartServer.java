@@ -28,12 +28,12 @@ public class StartServer {
         get("/books", (req, res) -> {
             return BookGUI.getAllBooks();
         });
-
-        /*
+        
         get("/books/{bookId}", (req, res) -> {
             return UserGUI.getBook(bookId);
         });
 
+        /*
         get("/books/{bookId}/{stickerId}", (req, res) -> {
             return UserGUI.getSticker(bookId, stickerId);
         });

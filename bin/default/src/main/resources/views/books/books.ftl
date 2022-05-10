@@ -4,7 +4,7 @@
 
         <ul>
             <#list books as book>
-                <li>${book.bookID} - ${book.childName} </li>
+                <li>${book.childName} </li>
             </#list>
         </ul>
 
