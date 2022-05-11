@@ -26,18 +26,26 @@ public class StartServer {
         });
 
         get("/books", (req, res) -> {
-            return BookGUI.getAllBooks();
+            String id = req.queryParams("bookID");
+            if(id == null){
+                return BookGUI.getAllBooks();
+            }
+            else{
+                return BookGUI.getBook(id);
+            }
         });
-        
-        get("/books/{bookId}", (req, res) -> {
-            return UserGUI.getBook(bookId);
+
+        get("/stickers", (req, res) -> {
+            String id = req.queryParams("stickerID");
+            if(id == null){
+                return StickerGUI.getAllStickers();
+            }
+            else{
+                return StickerGUI.getSticker(id);
+            }
         });
 
         /*
-        get("/books/{bookId}/{stickerId}", (req, res) -> {
-            return UserGUI.getSticker(bookId, stickerId);
-        });
-
         //For POST requests :
         post("/books/", (req, res) -> {
             return UserGui.postNewSticker();

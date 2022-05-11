@@ -14,11 +14,12 @@ For each good or bad sticker, the teacher who attributes it writes a description
 
 ## API :
 
-| Address                       | Resource                              |
-|:-----------------------------:|:-------------------------------------:|
-| /books                        | all books                             |
-| /books/[bookID]               | the stickers in a specific book       |
-| /books/[bookID]/[stickerID]   | a specific sticker in a specific book |
+| Address                           | Resource                              |
+|:---------------------------------:|:-------------------:|
+| /books                            | all books           |
+| /books/?bookID = 1                | a specific book     |
+| /stickers                         | all stickers        |
+| /stickers/?stickerID = 1          | a specific sticker  |
 
 ## Request path :
 
@@ -35,5 +36,7 @@ transmitted data are *entity/UserEntity* objects
   - can set new books
 
 ## Deployment
+
+Lancer le serveur : `./gradlew run`
 
 /!\ Upcoming : the app's deployment /!\
