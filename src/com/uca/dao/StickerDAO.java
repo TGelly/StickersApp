@@ -24,6 +24,8 @@ public class StickerDAO extends _Generic<StickerEntity> {
             e.printStackTrace();
         }
 
+        //? ce code renvoie bien ce qui'il doit renvoyer (testé)     
+
         return entities;
     }
 

@@ -14,7 +14,7 @@ For each good or bad sticker, the teacher who attributes it writes a description
 
 ## API :
 
-| Address                           | Resource                              |
+| Address                           | Resource            |
 |:---------------------------------:|:-------------------:|
 | /books                            | all books           |
 | /books/?bookID = 1                | a specific book     |
