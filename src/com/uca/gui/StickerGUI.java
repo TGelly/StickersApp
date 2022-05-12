@@ -51,7 +51,7 @@ public class StickerGUI {
 
         Map<String, Object> input = new HashMap<>();
 
-        input.put("stickers", StickerCore.getAllStickers());
+        input.put("stickers", StickerCore.getStickersInBook(bookID));
 
         Writer output = new StringWriter();
         Template template = configuration.getTemplate("stickers/stickers.ftl");

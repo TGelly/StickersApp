@@ -11,4 +11,8 @@ public class StickerCore {
         return new StickerDAO().getAllStickers();
     }
 
+    public static ArrayList<StickerEntity> getStickersInBook(int bookID) {
+        return new StickerDAO().getStickersInBook(bookID);
+    }
+
 }

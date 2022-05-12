@@ -64,13 +64,12 @@ public class StickerDAO extends _Generic<StickerEntity> {
         }
     }
 
-    public ArrayList<StickerEntity> listStickers(BookEntity obj){
-        String bookID = Integer.toString(obj.getBookId());
+    public ArrayList<StickerEntity> getStickersInBook(int bookID){
         ArrayList<StickerEntity> stickers = new ArrayList<>();
 
         try{
             PreparedStatement preparedStatement = this.connect.prepareStatement("SELECT * FROM stickers WHERE containerBook = ?;");
-            preparedStatement.setString(1,getBookID());
+            preparedStatement.setString(1,Integer.toString(bookID));
             ResultSet resultSet = prepareStatement.executeQuery();
             while(resultSet.next()){
                 StickerEntity entity = new StickerEntity();
@@ -80,10 +79,10 @@ public class StickerDAO extends _Generic<StickerEntity> {
                 entity.setDate(resultSet.getString("stickerDate"));
                 stickers.add(entity);
             }
-            
         }
         catch(SQLException e){
             e.printStackTrace();
         }
+        return stickers;
     }
 }
