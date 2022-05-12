@@ -36,12 +36,16 @@ public class StartServer {
         });
 
         get("/stickers", (req, res) -> {
-            String id = req.queryParams("stickerID");
-            if(id == null){
-                return StickerGUI.getAllStickers();
+            String stickerID = req.queryParams("stickerID");
+            String bookID = req.queryParams("bookID");
+            if(stickerID != null){
+                return StickerGUI.getSticker(stickerID);
+            }
+            else if (bookID != null){
+                return StickerGUI.getStickersInBook(bookID);
             }
             else{
-                return StickerGUI.getSticker(id);
+                return StickerGUI.getAllStickers();
             }
         });
 

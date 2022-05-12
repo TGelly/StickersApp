@@ -63,4 +63,27 @@ public class StickerDAO extends _Generic<StickerEntity> {
             e.printStackTrace();
         }
     }
+
+    public ArrayList<StickerEntity> listStickers(BookEntity obj){
+        String bookID = Integer.toString(obj.getBookId());
+        ArrayList<StickerEntity> stickers = new ArrayList<>();
+
+        try{
+            PreparedStatement preparedStatement = this.connect.prepareStatement("SELECT * FROM stickers WHERE containerBook = ?;");
+            preparedStatement.setString(1,getBookID());
+            ResultSet resultSet = prepareStatement.executeQuery();
+            while(resultSet.next()){
+                StickerEntity entity = new StickerEntity();
+                entity.setStickerId(resultSet.getInt("stickerID"));
+                entity.setColor(resultSet.getString("color"));
+                entity.setComment(resultSet.getString("comment"));
+                entity.setDate(resultSet.getString("stickerDate"));
+                stickers.add(entity);
+            }
+            
+        }
+        catch(SQLException e){
+            e.printStackTrace();
+        }
+    }
 }

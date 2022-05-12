@@ -14,12 +14,13 @@ For each good or bad sticker, the teacher who attributes it writes a description
 
 ## API :
 
-| Address                           | Resource            |
-|:---------------------------------:|:-------------------:|
-| /books                            | all books           |
-| /books/?bookID = 1                | a specific book     |
-| /stickers                         | all stickers        |
-| /stickers/?stickerID = 1          | a specific sticker  |
+| Address                           | Resource                  |
+|:---------------------------------:|:-------------------------:|
+| /books                            | all books                 |
+| /books/?bookID = 1                | a specific book           |
+| /stickers                         | all stickers              |
+| /stickers/?bookID = 1             | the stickers in this book |
+| /stickers/?stickerID = 1          | a specific sticker        |
 
 ## Request path :
 
