@@ -46,7 +46,7 @@ public class StickerGUI {
         return output.toString();
     }
 
-    public static String getStickersInBook(String bookID) throws IOException, TemplateException {
+    public static String getStickersInBook(int bookID) throws IOException, TemplateException {
         Configuration configuration = _FreeMarkerInitializer.getContext();
 
         Map<String, Object> input = new HashMap<>();

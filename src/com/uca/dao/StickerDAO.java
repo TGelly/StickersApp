@@ -70,7 +70,7 @@ public class StickerDAO extends _Generic<StickerEntity> {
         try{
             PreparedStatement preparedStatement = this.connect.prepareStatement("SELECT * FROM stickers WHERE containerBook = ?;");
             preparedStatement.setString(1,Integer.toString(bookID));
-            ResultSet resultSet = prepareStatement.executeQuery();
+            ResultSet resultSet = preparedStatement.executeQuery();
             while(resultSet.next()){
                 StickerEntity entity = new StickerEntity();
                 entity.setStickerId(resultSet.getInt("stickerID"));

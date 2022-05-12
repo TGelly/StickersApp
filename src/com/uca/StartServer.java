@@ -42,7 +42,7 @@ public class StartServer {
                 return StickerGUI.getSticker(stickerID);
             }
             else if (bookID != null){
-                return StickerGUI.getStickersInBook(bookID);
+                return StickerGUI.getStickersInBook(Integer.parseInt(bookID));
             }
             else{
                 return StickerGUI.getAllStickers();
