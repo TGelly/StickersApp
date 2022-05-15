@@ -53,7 +53,7 @@ public class StartServer {
             String color = req.queryParams("color");
             String comment = req.queryParams("comment");
             String date = req.queryParams("date");
-            if (color != null, comment != null, date != null){
+            if (color != null && comment != null && date != null){
                 StickerCore.newSticker(color, comment, date);
                 return BookGUI.getAllBooks();
             }
