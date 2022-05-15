@@ -8,6 +8,10 @@
             </#list>
         </ul>
 
+        <#list books as book>
+            <a href="cerise.freeboxos.fr:8081/stickers?bookID=${book.bookID!}">book ${book.bookID}</a>
+        </#list>
+
     </body>
 
 </html>
