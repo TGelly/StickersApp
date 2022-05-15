@@ -30,7 +30,7 @@ public class StickerDAO extends _Generic<StickerEntity> {
     }
 
     @Override
-    public void create(StickerEntity obj) {
+    public StickerEntity create(StickerEntity obj) {
         /*String id = Integer.toString(obj.getStickerId());*/
         String color = obj.getColor();
         String comment = obj.getComment();
@@ -47,6 +47,8 @@ public class StickerDAO extends _Generic<StickerEntity> {
         catch(SQLException e){
             e.printStackTrace();
         }
+
+        return obj;
     }
 
     @Override

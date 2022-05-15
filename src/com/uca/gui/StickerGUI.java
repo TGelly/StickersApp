@@ -27,7 +27,25 @@ public class StickerGUI {
 
         return output.toString();
     }
-    
+
+    public static String getSticker(String stickerID) throws IOException, TemplateException {
+
+        //todo tout changer
+
+        Configuration configuration = _FreeMarkerInitializer.getContext();
+
+        Map<String, Object> input = new HashMap<>();
+
+        input.put("stickers", StickerCore.getAllStickers());
+
+        Writer output = new StringWriter();
+        Template template = configuration.getTemplate("stickers/sticker.ftl");
+        template.setOutputEncoding("UTF-8");
+        template.process(input, output);
+
+        return output.toString();
+    }
+
     public static String getStickersInBook(int bookID) throws IOException, TemplateException {
         Configuration configuration = _FreeMarkerInitializer.getContext();
 
