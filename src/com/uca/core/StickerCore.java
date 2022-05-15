@@ -15,4 +15,11 @@ public class StickerCore {
         return new StickerDAO().getStickersInBook(bookID);
     }
 
+    public static void newSticker(String color, String comment, String date) {
+        StickerEntity S = new StickerEntity();
+        S.setComment(comment);
+        S.setColor(color);
+        S.setDate(date);
+        new StickerDAO().create(bookID);
+
 }

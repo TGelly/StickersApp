@@ -30,24 +30,23 @@ public class StickerDAO extends _Generic<StickerEntity> {
     }
 
     @Override
-    public StickerEntity create(StickerEntity obj) {
-        String id = Integer.toString(obj.getStickerId());
+    public void create(StickerEntity obj) {
+        /*String id = Integer.toString(obj.getStickerId());*/
         String color = obj.getColor();
         String comment = obj.getComment();
         String date = obj.getDate();
 
         try{
-            PreparedStatement preparedStatement = this.connect.prepareStatement("INSERT INTO stickers VALUES(?,?,?,?);");
-            preparedStatement.setString(1,id.toString());
-            preparedStatement.setString(2,color);
-            preparedStatement.setString(3,comment);
-            preparedStatement.setString(4,date);
+            PreparedStatement preparedStatement = this.connect.prepareStatement("INSERT INTO stickers VALUES(?,?,?);");
+            /*preparedStatement.setString(1,id.toString());*/
+            preparedStatement.setString(1,color);
+            preparedStatement.setString(2,comment);
+            preparedStatement.setString(3,date);
             ResultSet resultSet = preparedStatement.executeQuery();
         }
         catch(SQLException e){
             e.printStackTrace();
         }
-        return obj;
     }
 
     @Override

@@ -37,6 +37,6 @@ transmitted data are *entity/UserEntity* objects
 
 ## Deployment
 
-Lancer le serveur : `./gradlew run`
+Run the server : `./gradlew run`
 
 /!\ Upcoming : the app's deployment /!\

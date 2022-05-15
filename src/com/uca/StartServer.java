@@ -49,11 +49,14 @@ public class StartServer {
             }
         });
 
-        /*
-        //For POST requests :
-        post("/books/", (req, res) -> {
-            return UserGui.postNewSticker();
-        });
-        */
+        get("/newsticker", (req, res) -> {
+            String color = req.queryParams("color");
+            String comment = req.queryParams("comment");
+            String date = req.queryParams("date");
+            if (color != null, comment != null, date != null){
+                StickerCore.newSticker(color, comment, date);
+                return BookGUI.getAllBooks();
+            }
+        }
     }
 }
