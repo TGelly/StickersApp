@@ -4,13 +4,13 @@
 
         <ul>
             <#list books as book>
-                <li>${book.childName!} </li>
+                <li>
+                ${book.childName!} 
+                <input type="button" value="book" onclick="updatePage('/stickers?bookID=${book.bookId}')"> <br>
+                </li>
+                
             </#list>
         </ul>
-
-        <#list books as book>
-            <a href="cerise.freeboxos.fr:8081/stickers?bookID=${book.bookID!}">book ${book.bookID}</a>
-        </#list>
 
     </body>
 

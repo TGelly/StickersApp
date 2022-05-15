@@ -4,7 +4,7 @@
 
         <ul>
             <#list stickers as sticker>
-                <li>${sticker.color!} - ${sticker.comment!}</li>
+                <li>${sticker.date!} - ${sticker.color!} - ${sticker.comment!}</li>
             </#list>
         </ul>
 
