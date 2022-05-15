@@ -61,4 +61,9 @@ public class StickerGUI {
         return output.toString();
     }
 
+    public static String newSticker(String color, String comment, String date){
+        StickerCore.newSticker(color, comment, date);
+        return getAllStickers();
+    }
+
 }
