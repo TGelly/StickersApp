@@ -4,8 +4,11 @@
 
         <ul>
             <#list books as book>
-                <li>${book.childName!} </li>
+                <li>
+                ${book.childName!} 
                 <input type="button" value="book" onclick="updatePage('/stickers?bookID=${book.bookId}')"> <br>
+                </li>
+                
             </#list>
         </ul>
 
