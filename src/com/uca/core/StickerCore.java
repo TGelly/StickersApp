@@ -21,5 +21,5 @@ public class StickerCore {
         S.setColor(color);
         S.setDate(date);
         new StickerDAO().create(bookID);
-
+    }
 }

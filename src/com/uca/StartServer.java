@@ -57,6 +57,6 @@ public class StartServer {
                 StickerCore.newSticker(color, comment, date);
                 return BookGUI.getAllBooks();
             }
-        }
+        });
     }
 }
