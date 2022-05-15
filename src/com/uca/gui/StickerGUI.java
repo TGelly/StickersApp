@@ -61,7 +61,7 @@ public class StickerGUI {
         return output.toString();
     }
 
-    public static String newSticker(String color, String comment, String date){
+    public static String newSticker(String color, String comment, String date) throws IOException, TemplateException {
         StickerCore.newSticker(color, comment, date);
         return getAllStickers();
     }
