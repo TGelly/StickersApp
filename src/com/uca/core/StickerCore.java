@@ -20,6 +20,6 @@ public class StickerCore {
         S.setComment(comment);
         S.setColor(color);
         S.setDate(date);
-        new StickerDAO().create(bookID);
+        new StickerDAO().create(S);
     }
 }
