@@ -10,6 +10,11 @@ import java.io.StringWriter;
 import java.io.Writer;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Scanner;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.nio.file.Files;
+import java.nio.file.Path;
 
 public class StickerGUI {
 
@@ -61,9 +66,34 @@ public class StickerGUI {
         return output.toString();
     }
 
-    public static String newSticker(String color, String comment, String date) throws IOException, TemplateException {
+    public static void newSticker(String color, String comment, String date) throws IOException, TemplateException {
         StickerCore.newSticker(color, comment, date);
-        return getAllStickers();
     }
 
+    public static String newStickerForm(){
+
+        Path filename = Path.of("/home/thibault/StickersApp/src/main/resources/static/newstickerform.html");
+        String result = "erreur";
+        try {
+            result = Files.readString(filename);
+        } catch (IOException e) {
+            //TODO: handle exception
+        } 
+        return result;
+
+        /*
+        String file = "/home/thibault/StickersApp/src/main/resources/static/newstickerform.html";
+        Scanner scanner = null;
+        try {
+            scanner = new Scanner(new File(file));
+        } catch (FileNotFoundException e) {
+            System.out.println("erreur d'ouverture du fichier");
+        }
+        String result = "";
+        while (scanner.hasNext()){
+            result += scanner.next();
+        }
+        return result;
+        */
+    }
 }

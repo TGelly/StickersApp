@@ -55,10 +55,17 @@ public class StartServer {
             String date = req.queryParams("date");
             if (color != null && comment != null && date != null){
                 System.out.println("on fait bien la requete");
-                return StickerGUI.newSticker(color, comment, date);
+                StickerGUI.newSticker(color, comment, date);
             }
-            System.out.println("on ne fait pas la requete");
-            return BookGUI.getAllBooks();
+            else{
+                return "newsticker.html";
+            }
+            return StickerGUI.getAllStickers();
         });
+
+        get("/newstickerform", (req, res) -> {
+            return StickerGUI.newStickerForm();
+        });
+        
     }
 }

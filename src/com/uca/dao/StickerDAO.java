@@ -37,12 +37,12 @@ public class StickerDAO extends _Generic<StickerEntity> {
         String date = obj.getDate();
 
         try{
-            PreparedStatement preparedStatement = this.connect.prepareStatement("INSERT INTO stickers VALUES(?,?,?);");
+            PreparedStatement preparedStatement = this.connect.prepareStatement("INSERT INTO stickers (color, comment, stickerDate) VALUES (?,?,?);");
             /*preparedStatement.setString(1,id.toString());*/
             preparedStatement.setString(1,color);
             preparedStatement.setString(2,comment);
             preparedStatement.setString(3,date);
-            ResultSet resultSet = preparedStatement.executeQuery();
+            preparedStatement.executeUpdate();
         }
         catch(SQLException e){
             e.printStackTrace();
