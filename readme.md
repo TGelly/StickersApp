@@ -1,5 +1,8 @@
 # StickersApp
 
+Project of Thibault Gelly, William Le Gavrian and Gabin Duyck.
+<a href="https://github.com/TGelly/StickersApp"></a>
+
 This project is an app that allows teachers in preschool to give children good or bad stickers representing their behavior. Each child has a digital book that the parents may look into.
 
 ## Functionning
@@ -38,5 +41,3 @@ transmitted data are *entity/UserEntity* objects
 ## Deployment
 
 Run the server : `./gradlew run`
-
-/!\ Upcoming : the app's deployment /!\
